@@ -3,87 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covenant's Blog - Man's Greatest Fear</title>
+    <title>Covenant's Blog - Thoughts & Musings</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            color: white;
+            background: linear-gradient(145deg, rgb(43, 41, 41), rgba(5, 78, 60, 0.466), rgb(43, 41, 41));
+            margin: 0;
+            padding: 40px 20px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        header {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px aquamarine;
+            letter-spacing: 0.05em;
+        }
+
+        header > p {
+            color: rgba(127, 255, 212, 0.8);
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        article {
+            margin-bottom: 100px;
+            border-left: 5px solid aquamarine;
+            padding-left: 60px;
+            position: relative;
+        }
+
+        article::before {
+            content: "";
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: aquamarine;
+            border-radius: 50%;
+            box-shadow: 0 0 15px aquamarine;
+        }
+
+        article h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .post-meta {
+            color: rgba(127, 255, 212, 0.6);
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .post-meta strong {
+            color: aquamarine;
+        }
+
+        article h3 {
+            font-family: cursive;
+            color: aquamarine;
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        blockquote {
+            border-left: 3px solid aquamarine;
+            margin: 30px 0 30px 40px;
+            padding: 10px 30px;
+            font-style: italic;
+            background: none;
+        }
+
+        blockquote cite {
+            color: aquamarine;
+            font-size: 1.2rem;
+        }
+
+        ul {
+            margin: 25px 0;
+            padding-left: 40px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        ul li::marker {
+            color: aquamarine;
+        }
+
+        mark {
+            background: linear-gradient(120deg, transparent 0%, rgba(127, 255, 212, 0.3) 30%, rgba(127, 255, 212, 0.3) 70%, transparent 100%);
+            color: white;
+            padding: 0 5px;
+        }
+
+        details {
+            margin: 30px 0;
+            padding: 0;
+            background: none;
+        }
+
+        summary {
+            cursor: pointer;
+            color: aquamarine;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        summary:hover {
+            text-decoration: underline;
+        }
+
+        details[open] summary {
+            margin-bottom: 25px;
+        }
+
+        details p {
+            padding-left: 20px;
+        }
+
+        .divider {
+            margin: 60px 0;
+            text-align: center;
+            color: rgba(127, 255, 212, 0.4);
+            font-size: 2rem;
+        }
+
+        a {
+            color: aquamarine;
+            text-decoration: none;
+            border-bottom: 1px dotted aquamarine;
+        }
+
+        a:hover {
+            color: rgb(131, 35, 35);
+            border-bottom-color: rgb(131, 35, 35);
+        }
+
+        footer {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 2px solid rgba(127, 255, 212, 0.3);
+        }
+
+        footer nav {
+            margin-bottom: 20px;
+        }
+
+        abbr {
+            text-decoration: underline dotted;
+            cursor: help;
+        }
+
+        em {
+            color: rgba(127, 255, 212, 0.9);
+        }
+
+        strong {
+            color: aquamarine;
+        }
+
+        small {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        samp {
+            font-family: monospace;
+            color: rgba(127, 255, 212, 0.6);
+        }
+
+        b {
+            color: aquamarine;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Man's Greatest Fear</h1>
-        <p><small>Posted on October 11, 2025 by <strong>Covenant</strong></small></p>
-        <hr>
+        <h1>The Archive</h1>
+        <p>Late night thoughts from a Knowledge Bounty Hunter</p>
     </header>
 
     <main>
         <article>
-            <section>
-                <p>Being human is a <em>gift.</em></p>
-                <p>Some never agree to this tho.</p>
-                <blockquote>
-                    <cite>"Why am I alive? Why did I get born into this world? Against my own volition."</cite>
-                </blockquote>
-                
-                <p>Since time immemorial, the curiosity of man yet fails to be satisfied.</p>
-                <p>Science invented as a means to know more, to see more, to learn more.</p>
-                <p>Always striving to be at the peak of knowledge, reveals a fear nested deep within:</p>
-                <blockquote>
-                    <cite>"I have to be the strongest"</cite>
-                </blockquote>
-            </section>
+            <h2>Man's Greatest Fear</h2>
+            <p class="post-meta">Posted on <strong>October 11, 2025</strong> by Covenant</p>
+            
+            <p>Being human is a <em>gift.</em></p>
+            <p>Some never agree to this tho.</p>
+            <blockquote>
+                <cite>"Why am I alive? Why did I get born into this world? Against my own volition."</cite>
+            </blockquote>
+            
+            <p>Since time immemorial, the curiosity of man yet fails to be satisfied.</p>
+            <p>Science invented as a means to know more, to see more, to learn more.</p>
+            <p>Always striving to be at the peak of knowledge, reveals a fear nested deep within:</p>
+            <blockquote>
+                <cite>"I have to be the strongest"</cite>
+            </blockquote>
 
-            <hr>
+            <h3>The Paradox of Knowledge</h3>
+            <p>But what is strength without understanding? <mark>What is knowledge without wisdom?</mark></p>
+            <p>Man fears <b>irrelevance</b>. To be forgotten. To be surpassed. To be... <em>ordinary</em>.</p>
+            <p>So we chase:</p>
+            <ul>
+                <li>Achievement after achievement</li>
+                <li>Discovery after discovery</li>
+                <li>Innovation after innovation</li>
+            </ul>
+            <p>Yet the void remains.</p>
 
-            <section>
-                <h2>The Paradox of Knowledge</h2>
-                <p>But what is strength without understanding? <mark>What is knowledge without wisdom?</mark></p>
-                <p>Man fears <b>irrelevance</b>. To be forgotten. To be surpassed. To be... <em>ordinary</em>.</p>
-                <p>So we chase:</p>
-                <ul>
-                    <li>Achievement after achievement</li>
-                    <li>Discovery after discovery</li>
-                    <li>Innovation after innovation</li>
-                </ul>
-                <p>Yet the void remains.</p>
-            </section>
+            <h3>The Real Enemy</h3>
+            <p>Perhaps man's greatest fear isn't death, failure, or even obscurity.</p>
+            <p>It's <strong>meaninglessness</strong>.</p>
+            <p>The realization that despite all our efforts, all our science, all our progress—</p>
+            <p>We might just be <abbr title="Specks of dust">specks</abbr> screaming into the void, hoping someone hears.</p>
+            
+            <details>
+                <summary>But here's the thing...</summary>
+                <p>Maybe that's okay.</p>
+                <p>Maybe the gift of being human isn't about being remembered or being the strongest.</p>
+                <p>Maybe it's simply about <em>being</em>.</p>
+                <p>About experiencing this absurd, beautiful, terrifying existence.</p>
+                <p>Even if just for a moment.</p>
+            </details>
 
-            <hr>
-
-            <section>
-                <h2>The Real Enemy</h2>
-                <p>Perhaps man's greatest fear isn't death, failure, or even obscurity.</p>
-                <p>It's <strong>meaninglessness</strong>.</p>
-                <p>The realization that despite all our efforts, all our science, all our progress—</p>
-                <p>We might just be <abbr title="Specks of dust">specks</abbr> screaming into the void, hoping someone hears.</p>
-                
-                <details>
-                    <summary><b>But here's the thing...</b></summary>
-                    <p>Maybe that's okay.</p>
-                    <p>Maybe the gift of being human isn't about being remembered or being the strongest.</p>
-                    <p>Maybe it's simply about <em>being</em>.</p>
-                    <p>About experiencing this absurd, beautiful, terrifying existence.</p>
-                    <p>Even if just for a moment.</p>
-                </details>
-            </section>
-
-            <hr>
-
-            <section>
-                <h2>Final Thoughts</h2>
-                <p>So yeah, man fears a lot of things.</p>
-                <p>But the greatest fear? <mark>That none of it matters.</mark></p>
-                <p>And maybe the greatest courage? Living fully anyway.</p>
-                <br>
-                <p><em>— Just some late night thoughts from a Knowledge Bounty Hunter</em></p>
-            </section>
+            <p>So yeah, man fears a lot of things.</p>
+            <p>But the greatest fear? <mark>That none of it matters.</mark></p>
+            <p>And maybe the greatest courage? Living fully anyway.</p>
         </article>
 
-        <hr>
+        <div class="divider">• • •</div>
+
+        <article>
+            <h2>The Bug at 3AM</h2>
+            <p class="post-meta">Posted on <strong>September 28, 2025</strong> by Covenant</p>
+            
+            <p>There's something poetic about debugging at ungodly hours.</p>
+            <p>The world sleeps. Your IDE glows. The cursor blinks like it's mocking you.</p>
+            
+            <blockquote>
+                <cite>"It was working yesterday..."</cite>
+            </blockquote>
+            
+            <p>Classic. But was it tho?</p>
+            
+            <h3>The Journey</h3>
+            <p>Hour 1: This should be easy. Just a small logic error.</p>
+            <p>Hour 2: Maybe I need to refactor this entire module.</p>
+            <p>Hour 3: <mark>Questioning every life decision that led to this moment.</mark></p>
+            
+            <p>Then... you find it. A missing semicolon. A typo in a variable name. A logic gate you inverted.</p>
+            <p>And somehow, the universe makes sense again.</p>
+            
+            <details>
+                <summary>What I learned...</summary>
+                <p>Bugs don't care about your sleep schedule.</p>
+                <p>Code doesn't care about your feelings.</p>
+                <p>But the satisfaction of finally running that green test? <strong>Chef's kiss.</strong></p>
+                <p>That's what keeps us going. That dopamine hit of solving the puzzle.</p>
+            </details>
+        </article>
+
+        <div class="divider">• • •</div>
+
+        <article>
+            <h2>Why I Farm (No, Really)</h2>
+            <p class="post-meta">Posted on <strong>August 15, 2025</strong> by Covenant</p>
+            
+            <p>People find it weird when I say I'm into farming.</p>
+            <p>"You're a dev. Why plants?"</p>
+            
+            <p>Here's the thing: <mark>farming is just another system to optimize.</mark></p>
+            
+            <h3>The Parallels</h3>
+            <ul>
+                <li>Plant wrong season? Null pointer exception in real life.</li>
+                <li>Overwater? Memory leak. Your plant drowns in resources.</li>
+                <li>Ignore pests? Technical debt that compounds exponentially.</li>
+                <li>Harvest too early? Premature optimization. Ruins everything.</li>
+            </ul>
+            
+            <p>But unlike code, you can't just git reset --hard and start over.</p>
+            <p>Plants teach you <strong>patience</strong>. They grow on their timeline, not yours.</p>
+            
+            <blockquote>
+                <cite>"Nature doesn't negotiate with your sprint deadlines."</cite>
+            </blockquote>
+            
+            <p>And when you finally harvest what you planted months ago?</p>
+            <p>That feeling hits different from deploying to prod. It's... <em>tangible</em>.</p>
+            <p>You can literally eat the fruits of your labor. Try doing that with a React component.</p>
+        </article>
+
+        <div class="divider">• • •</div>
 
         <section>
             <h3>Comments</h3>
             <p><em>Comments section coming soon... (when we get to JavaScript in school😅)</em></p>
         </section>
     </main>
-
-    <hr>
 
     <footer>
         <nav>

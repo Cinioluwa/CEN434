@@ -4,115 +4,377 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covenant's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Georgia;
+            color: white;
+            background: linear-gradient(145deg, rgb(43, 41, 41), rgba(5, 78, 60, 0.466), rgb(43, 41, 41));
+            padding: 450px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 20px;
+            animation: fadeIn 1s ease-in;
+            overflow-x: clip;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        a{
+            text-decoration: none;
+            color:aquamarine;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(131, 35, 35);
+            transition: width 0.3s ease;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        a:hover{
+            color:rgb(131, 35, 35);
+            transform: translateX(5px);
+        }
+
+        header{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .scene {
+            perspective: 600px;
+            margin: 40px 0;
+        }
+
+        .scene * {
+            transform-style: preserve-3d;
+        }
+
+        .layeredText {
+            --layer-offset: 1px;
+            --layers-count: 20;
+            position: relative;
+            transform: rotateX(30deg);
+            font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 900;
+            font-size: 4rem;
+            display: inline-block;
+        }
+
+        .layeredText > span {
+            color: black;
+            text-shadow: 0 0 0.1em #003;
+        }
+
+        .layeredText .layers,
+        .layeredText .layer {
+            position: absolute;
+            inset: 0;
+        }
+
+        .layeredText .layer {
+            --n: calc(var(--i) / var(--layers-count));
+            transform: translateZ(calc(var(--i) * var(--layer-offset)));
+            color: hsl(180 70% calc(var(--n) * 100%));
+        }
+
+        h1{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .pr{
+            text-shadow: 1px 1px aquamarine;
+            font-size: 30px;
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            margin-bottom: 20px;
+        }
+
+        #cov{
+            width: 450px;
+            border-radius: 25px;
+            border: solid;
+            box-shadow: 10px 20px 10px black;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+        }
+
+        #cov:hover{
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 15px 25px 30px rgba(127, 255, 212, 0.4), 0 0 40px aquamarine;
+            border-color: aquamarine;
+        }
+
+        #echo, #jumia, #ascension, #triple{
+            display: flex;
+            font-family: monospace;
+            font-size: 20px;
+            opacity: 0;
+            animation: slideIn 0.8s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #echo { animation-delay: 0.2s; }
+        #jumia { animation-delay: 0.4s; }
+        #ascension { animation-delay: 0.6s; }
+        #triple { animation-delay: 0.8s; }
+
+        h3{
+            font-family: cursive;
+            font-size: 1.2rem;
+            color: aquamarine;
+            font-stretch: expanded;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        header i{
+            color: aquamarine;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        header i:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 10px aquamarine;
+        }
+
+        section{
+            margin-top: 100px;
+            scroll-margin-top: 100px;
+        }
+
+        div>p{
+            max-width: 700px;
+            padding-right:  70px;
+        }
+
+        footer{
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        main img{
+            max-width: 200px;
+            border-radius: 5px;
+            box-shadow: 10px 10px 10px aquamarine;
+            max-height: 100px;
+            transition: all 0.4s ease;
+            filter: grayscale(30%);
+        }
+
+        main img:hover {
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 15px 15px 20px aquamarine, 0 0 30px rgba(127, 255, 212, 0.6);
+            filter: grayscale(0%);
+        }
+
+        #echo img{
+            top: -15px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        details {
+            cursor: pointer;
+        }
+
+        #whoami ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 30px;
+        }
+
+        #whoami ul li {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(127, 255, 212, 0.1);
+        }
+
+        #whoami ul li:last-child {
+            border-bottom: none;
+        }
+
+        #contact address {
+            font-style: normal;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        #contact address p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .socials {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .socials a {
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .socials a:hover {
+            transform: scale(1.2);
+        }
+
+        abbr {
+            cursor: help;
+            transition: all 0.2s ease;
+        }
+
+        abbr:hover {
+            color: aquamarine;
+            text-decoration-color: aquamarine;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1><em>Hi!</em> I'm Covenant  </h1>
-        <h2>And here's what I've been up to...</h2>
-        <hr>
+        <img src="me.jpg" alt="Covenant" id="cov">
+        <div class="scene">
+            <h1 class="layeredText">
+                <span>Hi! I'm Covenant</span>
+                <div class="layers"></div>
+            </h1>
+        </div>
+        <i>Engineer...</i>
+        <i>Dev...</i>
+        <i>Tinkerer...</i>
+        <i>Knowledge Bounty Hunter</i>
+
     </header>
-
+    <script>
+        // Generate the 3D layers for the text effect
+        const layeredText = document.querySelector('.layeredText');
+        const layersContainer = layeredText.querySelector('.layers');
+        const text = layeredText.querySelector('span').textContent;
+        const layersCount = 20;
+        
+        layeredText.style.setProperty('--layers-count', layersCount);
+        
+        for (let i = 0; i < layersCount; i++) {
+            const layer = document.createElement('div');
+            layer.className = 'layer';
+            layer.textContent = text;
+            layer.style.setProperty('--i', i);
+            layersContainer.appendChild(layer);
+        }
+    </script>
     <main>
-        <section>
-            <table width="85%" cellspacing="12">
-                <tr>
-                    <td>
-                        <h3>Echo</h3>
-                        <blockquote>
-                            A startup focused on making people's voices heard.
-                            I'm the backend developer and have worked with 
-                            <abbr title="TypeScript">TS</abbr>, 
-                            <abbr title="Express.js">Express</abbr>(Node),
-                            <abbr title="PostgreSQL">Postgres</abbr>(<abbr title="Prisma Object Relational Mapper">Prisma ORM</abbr>)
-                            and Docker.
-                        </blockquote>
-                        <hr width="60%">
-                    </td>
-                    <td>
-                        <img src="echo.svg" alt="Echo project logo" width="180">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h3>Jumia Clone</h3>
-                        <blockquote>
-                            Built this entirely in <b>JavaFX</b> as a learning challenge. 
-                            Used the <abbr title="Model View Controller">MVC</abbr> to demo my knowledge on separation of concerns. 
-                            <b>Maven</b> managed builds; <b>SceneBuilder</b> was a new tool i figured could help with layouts.
-                        </blockquote>
-                        <hr width="60%">
-                    </td>
-                    <td>
-                        <img src="work-orange_cart.png" alt="Jumia Clone screenshot" width="180">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h3>Ascension 2025</h3>
-                        <blockquote>
-                            Served as technical lead for the event and developed an automated judging process 
-                            using <mark>Gemini's API</mark> integrated with a <b>Python</b>-based GUI.
-                        </blockquote>
-                        <hr width="60%">
-                    </td>
-                    <td>
-                        <img src="work-gemini.jpg" alt="Ascension 2025 logo" width="180">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <h3>Tripledots Technologies</h3>
-                        <blockquote>
-                            Led my company's website redesign during <em>SIWES</em>. 
-                            Designed on <b>Figma</b>, built with <b>HTML, CSS, JS</b>, versioned with <b>Git</b>, 
-                            and deployed via <b>Vercel</b>.
-                        </blockquote>
-                        <a href="https://github.com/Cinioluwa" target="_blank"><i>See more of my projects on GitHub...</i></a>
-                    </td>
-                    <td  >
-                        <img src="work-tripledots.png" alt="Tripledots Technologies logo" width="180">
-                    </td>
-                </tr>
-            </table>
+        <section id="projects">
+            <h2 class="pr">My Projects</h2>   
+            <h3>Echo</h3> 
+            <div id="echo">          
+                <p>
+                    A startup focused on making people's voices heard.
+                    I'm the backend developer and have worked with 
+                    <abbr title="TypeScript">TS</abbr>, 
+                    <abbr title="Express.js">Express</abbr>(Node),
+                    <abbr title="PostgreSQL">Postgres</abbr>(<abbr title="Prisma Object Relational Mapper">Prisma ORM</abbr>)
+                    and Docker.
+                </p>
+                <img src="echo.png" alt="Echo project logo">
+            </div> 
+            <h3>Jumia Clone</h3>
+            <div id="jumia">
+                <p>
+                    Built this entirely in <b>JavaFX</b> as a learning challenge. 
+                    Used the <abbr title="Model View Controller">MVC</abbr> to demo my knowledge on separation of concerns. 
+                    <b>Maven</b> managed builds; <b>SceneBuilder</b> was a new tool i figured could help with layouts.
+                </p>
+                <img src="work-orange_cart.png" alt="Jumia Clone screenshot">
+            </div>
+            <h3>Ascension 2025</h3>
+            <div id="ascension">            
+                <p>
+                    Served as technical lead for the event and developed an automated judging process 
+                    using Gemini's API integrated with a <b>Python</b>-based GUI.
+                </p>
+                <img src="work-gemini.jpg" alt="Ascension 2025 logo">
+            </div>    
+            <h3>Tripledots Technologies</h3>
+            <div id="triple">
+                    <p>
+                        Led my company's website redesign during <em>SIWES</em>. 
+                        Designed on <b>Figma</b>, built with <b>HTML, CSS, JS</b>, versioned with <b>Git</b>, 
+                        and deployed via <b>Vercel</b>.
+                    </p>
+                    <img src="work-tripledots.png" alt="Tripledots Technologies logo">
+            </div>
+            <a href="https://github.com/Cinioluwa" target="_blank"><i>See more of my projects on GitHub...</i></a>
         </section>
-        <br>
-
-        <hr>
-
-        <section>
-            <details open>
-                <summary><b>More About Me</b></summary>
-                <p>Aside from tech, I'm also:</p>
-                <ul>
-                    <li>A keyboardist at church</li>
-                    <li>A farmer (house farms totally count please..)</li>
-                    <li>A <mark>Knowledge Bounty Hunter</mark> </li>
-                    <li>I loveee simulations, modeling, and figuring out how systems work </li>
-                    <li>I have a <a href="my_ecommerce_page.html">store</a> in the works... </li>
-                </ul>
-            </details>
+        <section id="whoami">
+            <h2 class="pr">More About Me</h2>
+            <p>Aside from tech, I'm also:</p>
+            <ul>
+                <li>A keyboardist at church</li>
+                <li>A farmer (house farms totally count please..)</li>
+                <li>A Knowledge Bounty Hunter</li>
+                <li>I loveee simulations, modeling, and figuring out how systems work</li>
+                <li>I have a <a href="my_ecommerce_page.html">store</a> in the works...</li>
+            </ul>
         </section>
-
-        <hr>
-
-        <section>
-            <h3>Contact Me</h3>
+        <section id="contact">
+            <h2 class="pr">Contact Me</h2>
             <address>
                 <p>I don't like calls but: <a href="tel:+2349129408866">+234 91 2940 8866</a></p>
                 <p>Emails sound better: <a href="mailto:covkey13@gmail.com">covkey13@gmail.com</a></p>
             </address>
+            <div class="socials">
+                <a href="https://github.com/Cinioluwa" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/covenantadeogo" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Cinioluwa" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://instagram.com/ctinioluwa15" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </section>
     </main>
-
-    <hr>
-
     <footer>
         <p>Check out my <a href="my_blog.html">blogs!!</a></p>
-        <p><small><samp>Developed by CIA © 2025</samp></small></p>
+        <p>Developed by CIA © 2025</p>
     </footer>
 </body>
 </html>
