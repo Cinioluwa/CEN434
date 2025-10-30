@@ -408,7 +408,7 @@ function showSuccessMessage(productName, quantity){
     message.textContent = `Added ${quantity}x ${productName} to cart!`;
     message.style.cssText = `
         position: fixed;
-        top: 20px;
+        top: 80px;
         right: 20px;
         background: aquamarine;
         color: black;
@@ -422,7 +422,7 @@ function showSuccessMessage(productName, quantity){
 
     setTimeout(() => {
         message.remove();
-    }, 3000);
+    }, 1000);
 };
 
 function renderCart(){
